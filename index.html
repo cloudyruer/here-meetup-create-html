@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fs -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- style -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <title>Document</title>
+  <!-- body -->
+  <body>
+    <!-- nav-->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+      </div>
+    </nav>
+
+    <!-- start -->
+    <div class="container my-3">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <form
+            name="form1"
+            onsubmit="sendForm(); return false;"
+            class="create-form"
+          >
+            <!-- 活動標題 -->
+            <h2 class="create-form__title">活動資訊</h2>
+            <!-- 活動封面 -->
+            <div class="form-group create-form__upload">
+              <label for="activity_img" class="create-form__label"
+                >活動封面</label
+              >
+              <div class="form-control create-form__fake-btn">上傳活動封面</div>
+
+              <!-- 隱藏 -->
+              <input
+                type="file"
+                class="form-control d-none"
+                name="activity_img"
+                id="activity_img"
+                accept="image/jpeg, image/png"
+              />
+
+              <div
+                class="
+                  create-form__img-box
+                  d-flex
+                  justify-content-center
+                  align-items-center
+                "
+              >
+                <!-- <img src="./chermiti-mohamed-NwN-vtN0cd0-unsplash.jpg" alt="" /> -->
+                <i class="fas fa-file-image"></i>
+              </div>
+            </div>
+            <!-- 活動標題 -->
+            <div class="form-group">
+              <label for="title" class="create-form__label"
+                >活動標題 <span class="team-error">*</span></label
+              >
+              <input type="text" class="form-control" id="title" name="title" />
+              <small class="form-text team-error">請填寫活動標題</small>
+            </div>
+            <!-- 活動類型 -->
+            <div class="form-group">
+              <label for="activity_type" class="create-form__label"
+                >活動類別 <span class="team-error">*</span></label
+              >
+              <select
+                class="form-control"
+                id="activity_type"
+                name="activity_type"
+              >
+                <option value="" disabled selected>-- 請選擇活動類別 --</option>
+                <option value="跑步">跑步</option>
+                <option value="爬山">爬山</option>
+                <option value="游泳">游泳</option>
+                <option value="健身">健身</option>
+                <option value="其他">其他</option>
+              </select>
+              <small class="form-text team-error">請選擇活動類別</small>
+            </div>
+            <!-- 活動人數 -->
+            <div class="form-group">
+              <label for="activity_people" class="create-form__label"
+                >活動人數 <span class="team-error">*</span></label
+              >
+              <select
+                class="form-control"
+                id="activity_people"
+                name="activity_people"
+              >
+                <option value="" disabled selected>-- 請選擇活動人數 --</option>
+                <option value="2">2人</option>
+                <option value="3">3人</option>
+                <option value="4">4人</option>
+                <option value="5">5人</option>
+                <option value="6">6人</option>
+                <option value="7">7人</option>
+                <option value="8">8人</option>
+              </select>
+              <small class="form-text team-error">請選擇活動人數</small>
+            </div>
+
+            <!-- 開始時間 -->
+            <div class="form-group">
+              <label for="activity_time" class="create-form__label"
+                >開始時間 <span class="team-error">*</span></label
+              >
+              <input
+                type="datetime-local"
+                id="activity_time"
+                class="form-control"
+                name="activity_time"
+                value=""
+                min=""
+              />
+              <small class="form-text team-error">請選擇活動時間</small>
+            </div>
+
+            <!-- 活動內容 -->
+            <div class="form-group">
+              <label for="activity_content" class="create-form__label"
+                >活動內容 <span class="team-error">*</span></label
+              >
+              <textarea
+                placeholder="請輸入活動內容 15~255字"
+                id="activity_content"
+                name="activity_content"
+                cols="70"
+                rows="10"
+                class="form-control"
+                style="resize: none"
+              ></textarea>
+              <small class="form-text team-error"
+                >請輸入活動內容 15~255字</small
+              >
+            </div>
+
+            <!-- sample -->
+            <div class="form-group">
+              <label class="create-form__label"
+                >活動地點 <span class="team-error">*</span></label
+              >
+              <div
+                class="d-flex justify-content-between justify-content-lg-center"
+              >
+                <button
+                  class="btn create-form__btn create-form__btn--light"
+                  type="button"
+                >
+                  目前位置
+                </button>
+                <button
+                  class="btn create-form__btn create-form__btn--dark"
+                  type="button"
+                >
+                  封面照位置
+                </button>
+              </div>
+              <div class="create-form__map">我是快樂的地圖!!!</div>
+            </div>
+            <!-- submit -->
+            <div class="form-group text-center">
+              <button type="submit" class="btn team-btn">發佈</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .querySelector(".create-form__upload")
+        .addEventListener("click", () => {
+          document.getElementById("activity_img").click();
+        });
+    </script>
+  </body>
+</html>
