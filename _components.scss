@@ -1,18 +1,4 @@
-.team-btn {
-  color: $team-white;
-  background-color: $team-primary;
-  border-radius: 100px;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 10px 20px;
-  width: 268px;
-}
-
-.team-error-border {
-  border-color: $team-error;
-}
-
-.create-form {
+.j-create-form {
   &__title {
     font-size: 28px;
     font-weight: bold;
@@ -35,20 +21,28 @@
     padding: 10px 20px;
     width: 45%;
 
+    border: 3px solid $team-secondary;
+
     @include respond(team-lg) {
       width: 30%;
       margin-left: 15px;
       margin-right: 15px;
     }
 
-    &--dark {
+    // 添加時 顏色變深
+    &--active {
       border: 3px solid $team-secondary;
       background-color: #f2faed;
     }
 
-    &--light {
-      border: 3px solid $team-secondary;
-    }
+    // &--dark {
+    //   border: 3px solid $team-secondary;
+    //   background-color: #f2faed;
+    // }
+
+    // &--light {
+    //   border: 3px solid $team-secondary;
+    // }
   }
 
   &__fake-btn {

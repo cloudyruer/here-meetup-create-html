@@ -1,3 +1,12 @@
+// team color
+$team-primary: #e88239;
+$team-secondary: #023a20;
+$team-info: #0965e0;
+$team-success: #5fae27;
+$team-warning: #f6c327;
+$team-error: #d43212;
+$team-white: #fff;
+
 // RWD breakpoint
 $team-bp-xs: 0px;
 $team-bp-sm: 576px;
@@ -42,40 +51,14 @@ $team-bp-xl: 1200px;
   }
 }
 
-$team-primary: #e88239;
-$team-secondary: #023a20;
-$team-info: #0965e0;
-$team-success: #5fae27;
-$team-warning: #f6c327;
-$team-error: #d43212;
-$team-white: #fff;
+// NOTE WARN 取消全部bootstrap的focus藍色圈
 
-// color
-.team-primary {
-  color: $team-primary;
-}
+// .btn:focus,
+// .btn:active {
+//   outline: none;
+//   box-shadow: none;
+// }
 
-.team-secondary {
-  color: $team-secondary;
-}
-
-.team-info {
-  color: $team-info;
-}
-
-.team-success {
-  color: $team-success;
-}
-
-.team-warning {
-  color: $team-warning;
-}
-
-.team-error {
-  color: $team-error;
-}
-
-// width
-.team-width-45 {
-  width: 45%;
+.btn:focus {
+  box-shadow: none;
 }
